@@ -8,7 +8,6 @@
     name: nginx
     enabled: true
     state: started
-
   # method1: remove the html directory and create it again
 - name: Remove the html directory
   ansible.builtin.file:
@@ -34,11 +33,7 @@
 - name:  Create Nginx Reverse Proxy Configuration
   ansible.builtin.template:
     src: roboshop.conf
-    dest: /etc/nginx/default.d/roboshop.conf  
-  #notify: # how nginx will know that server has to be restarted
-  #- restart nginx  
+    dest: /etc/nginx/default.d/roboshop.conf
+  notify:  Restart nginx 
 
-- name: estart Nginx Service to load the changes of the configuration
-  ansible.builtin.service:
-    name: nginx
-    state: restarted 
+ 
