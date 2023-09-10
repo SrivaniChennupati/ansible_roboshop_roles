@@ -35,5 +35,10 @@
   ansible.builtin.template:
     src: roboshop.conf
     dest: /etc/nginx/default.d/roboshop.conf  
-  notify: # how nginx will know that server has to be restarted
-  - Restart nginx 
+  #notify: # how nginx will know that server has to be restarted
+  #- restart nginx  
+
+- name: estart Nginx Service to load the changes of the configuration
+  ansible.builtin.service:
+    name: nginx
+    state: restarted 
