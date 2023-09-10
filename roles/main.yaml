@@ -3,7 +3,7 @@
   become: yes
   #now create roles
   roles:
-  - "{{componet}}"
+  - "{{component}}"
 
   # now I want to run catalouge componnet but here if we see we are hardcoding it , so we can parametrixe it 
 
