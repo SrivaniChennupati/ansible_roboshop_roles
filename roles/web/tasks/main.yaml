@@ -32,7 +32,7 @@
     remote_src: yes
 
 - name:  Create Nginx Reverse Proxy Configuration
-  ansible.builtin.copy:
+  ansible.builtin.template:
     src: roboshop.conf
     dest: /etc/nginx/default.d/roboshop.conf  
   notify: # how nginx will know that server has to be restarted
