@@ -32,8 +32,9 @@
 
 - name:  Create Nginx Reverse Proxy Configuration
   ansible.builtin.template:
-    src: roboshop.conf
+    src: /templates/roboshop.conf
     dest: /etc/nginx/default.d/roboshop.conf
-  notify:  Restart nginx 
+  notify:
+  - restart nginx 
 
  
