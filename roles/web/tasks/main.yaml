@@ -36,4 +36,4 @@
     src: roboshop.conf
     dest: /etc/nginx/default.d/roboshop.conf  
   notify: # how nginx will know that server has to be restarted
-  - restart nginx 
+  - Restart nginx 

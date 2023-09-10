@@ -1,4 +1,4 @@
-- name: restart nginx #name should be same as we gave while using notify keyword , when it sees notify keyword , it searches for handler directory 
+- name: Restart nginx #name should be same as we gave while using notify keyword , when it sees notify keyword , it searches for handler directory 
   ansible.builtin.service:
     name: nginx
     state: restarted
