@@ -1,0 +1,33 @@
+
+#I need to refer nodejs.yaml tasks in common folder
+#catalouge is one role
+#mongodb is one role
+#common is also another role
+#I need to import a task nodejs.yaml into catalogie tasks main.yaml
+
+- name: Install nodejs
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: nodejs  # no need to give nodejs.yaml
+
+- name: setup application
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: app_setup   
+
+- name: Install the application dependencies
+  ansible.builtin.command: npm install
+  #we have to change the directory to /app
+  args:
+    chdir: /app
+
+- name: Seup systemd service
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: app_setup.yaml 
+
+- name: load schema
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: load_mongo_schema      
+

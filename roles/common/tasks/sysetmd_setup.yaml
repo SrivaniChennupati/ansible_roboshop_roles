@@ -1,0 +1,10 @@
+- name: Setup SystemD {{component}} Service
+  ansible.builtin.copy:
+    src: "{{component}}.service"
+    dest: /etc/systemd/system/catalouge.service
+
+- name: demon-reload the service
+  ansible.builtin.systemd:
+    daemon_reload: true #here itself we can have enable and start also
+    state: restarted
+    name: "{{component}}"

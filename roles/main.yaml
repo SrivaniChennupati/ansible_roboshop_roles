@@ -1,6 +1,10 @@
 - name: Installing the Roboshop
-  hosts: mongodb
+  hosts: "{{component}}" # making this as  variable
   become: yes
   #now create roles
   roles:
-  - mongodb
+  - "{{componet}}"
+
+  # now I want to run catalouge componnet but here if we see we are hardcoding it , so we can parametrixe it 
+
+  # while executing this main.yaml file , we just need to give -e component=respectivecompoent eg : component=catalouge
