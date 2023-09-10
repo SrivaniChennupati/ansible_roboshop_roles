@@ -9,4 +9,4 @@
     state: installed 
 
 - name: load the schema
-  ansible.builtin.command: mongo --host mongodb.devopsvani.online < /app/schema/catalogue.js
+  ansible.builtin.shell: mongo --host mongodb.devopsvani.online < /app/schema/{{component}}.js
