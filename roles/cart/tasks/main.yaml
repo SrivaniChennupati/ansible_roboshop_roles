@@ -13,10 +13,10 @@
   args:
     chdir: /app
 
-- name: Seup systemd service
+ name: Seup systemd service
   ansible.builtin.import_role:
     name: common
-    tasks_from: app_setup.yaml
+    tasks_from: systemd_setup 
 
     
   
