@@ -25,8 +25,8 @@ shipping.devopsvani.online
 [rabbitmq]
 rabbitmq.devopsvani.online
 
-[payments]
-payments.devopsvani.online
+[payment]
+payment.devopsvani.online
 
 [dispatch]
 dispatch.devopsvani.online
